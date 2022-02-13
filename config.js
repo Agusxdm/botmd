@@ -1,45 +1,42 @@
 /**
-   * Create By Dika Ardnt.
-   * Contact Me on wa.me/6288292024190
-   * Follow https://github.com/DikaArdnt
+   * Base Ori By : Dika Ardnt.
+   * Recode By : RyukaTeam
+   * 
+   * Source Base : https://github.com/DikaArdnt
+   * Source Recode : https://youtube.com/channel/UCjxavxEQa1Wd9A4J9tOmATA
 */
 
 const fs = require('fs')
 const chalk = require('chalk')
+const setting = JSON.parse(fs.readFileSync('./setting.json'))
 
-// Website Api
-global.APIs = {
-	zenz: 'https://zenzapi.xyz',
-}
-
-// Apikey Website Api
-global.APIKeys = {
-	'https://zenzapi.xyz': 'Your Key',
-}
-
-// Other
-global.owner = ['6283167714830','6288292024190','62882920241909','62882920241908','6281382420312']
-global.packname = 'Hisoka Morrow'
-global.author = '\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n'
-global.sessionName = 'hisoka'
-global.prefa = ['','!','.','🐦','🐤','🗿']
-global.sp = '⭔'
-global.mess = {
-    success: '✓ Success',
-    admin: 'Fitur Khusus Admin Group!',
-    botAdmin: 'Bot Harus Menjadi Admin Terlebih Dahulu!',
-    owner: 'Fitur Khusus Owner Bot',
-    group: 'Fitur Digunakan Hanya Untuk Group!',
-    private: 'Fitur Digunakan Hanya Untuk Private Chat!',
-    bot: 'Fitur Khusus Pengguna Nomor Bot',
-    wait: 'Loading...',
-}
-global.thumb = fs.readFileSync('./lib/hisoka.jpg')
-
-let file = require.resolve(__filename)
-fs.watchFile(file, () => {
+    //===> GAUSAH DIUBAH
+    global.owner = [`${setting.nomerowner}`,`${setting.nomerowner}`,`${setting.nomerowner}`]
+    global.packname = `${setting.namaowner}`
+    global.author = `© ${setting.namaowner}`
+    global.sessionName = `${setting.sessionname}`
+    global.donasi = `${setting.donasi}`
+    global.prefa = ['','!','/','#','.']
+    global.sp = '⭔'
+    
+    //===> EDIT SESUAI KEMAUANMU
+    global.mess = {
+    admin: '𝐋𝐔 𝐀𝐃𝐌𝐈𝐍? 🤨',
+    botAdmin: '𝐁𝐎𝐓 𝐁𝐔𝐊𝐀𝐍 𝐀𝐃𝐌𝐈𝐍 😔',
+    owner: '𝐋𝐔 𝐁𝐔𝐊𝐀𝐍 𝐎𝐖𝐍𝐄𝐑 𝐆𝐖 😠',
+    group: '𝐊𝐇𝐔𝐒𝐔𝐒 𝐆𝐑𝐎𝐔𝐏 𝐍𝐆𝐀𝐁 😏',
+    private: '𝐊𝐇𝐔𝐒𝐔𝐒 𝐏𝐑𝐈𝐕𝐀𝐓𝐄 𝐂𝐇𝐀𝐓 𝐁𝐀𝐍𝐇',
+    bot: '𝐊𝐇𝐔𝐒𝐔𝐒 𝐏𝐄𝐍𝐆𝐆𝐔𝐍𝐀 𝐍𝐎𝐌𝐄𝐑 𝐁𝐎𝐓',
+    wait: '𝐋𝐎𝐀𝐃𝐈𝐍𝐆...',
+    done: '𝐃𝐎𝐍𝐄 𝐍𝐆𝐀𝐁 🤗',
+    }
+    global.thumb = fs.readFileSync('./media/ryuu.jpg')
+    
+    //===> INI JUGA GAUSAH DIUBAH
+    let file = require.resolve(__filename)
+    fs.watchFile(file, () => {
 	fs.unwatchFile(file)
 	console.log(chalk.redBright(`Update'${__filename}'`))
 	delete require.cache[file]
 	require(file)
-})
+    })
